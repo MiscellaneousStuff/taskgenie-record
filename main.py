@@ -17,12 +17,12 @@ def stop_recording():
     global audio_frames
     wavfile.write("recording.wav", audio_samplerate, audio_frames)
 
-@app.route("/start_recording", methods=["POST"])
+@app.route("/start_recording", methods=["GET"])
 def start_recording_route():
     start_recording()
     return "Recording started"
 
-@app.route("/stop_recording", methods=["POST"])
+@app.route("/stop_recording", methods=["GET"])
 def stop_recording_route():
     stop_recording()
     return "Recording stopped"
